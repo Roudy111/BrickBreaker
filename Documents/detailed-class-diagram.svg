@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000"/>
+    </marker>
+  </defs>
+  
+  <!-- GameManager -->
+  <rect x="50" y="50" width="200" height="140" fill="#ADD8E6" stroke="black"/>
+  <text x="150" y="70" text-anchor="middle" font-weight="bold">GameManager</text>
+  <line x1="50" y1="80" x2="250" y2="80" stroke="black"/>
+  <text x="60" y="100" font-size="12">- currentState: GameState</text>
+  <text x="60" y="115" font-size="12">- levelManager: LevelManager</text>
+  <text x="60" y="130" font-size="12">- scoreManager: ScoreManager</text>
+  <line x1="50" y1="140" x2="250" y2="140" stroke="black"/>
+  <text x="60" y="160" font-size="12">+ ChangeState(GameState)</text>
+  <text x="60" y="175" font-size="12">+ StartGame()</text>
+  
+  <!-- LevelManager -->
+  <rect x="300" y="50" width="200" height="140" fill="#98FB98" stroke="black"/>
+  <text x="400" y="70" text-anchor="middle" font-weight="bold">LevelManager</text>
+  <line x1="300" y1="80" x2="500" y2="80" stroke="black"/>
+  <text x="310" y="100" font-size="12">- currentLevel: int</text>
+  <text x="310" y="115" font-size="12">- brickInitializer: BrickInitializer</text>
+  <line x1="300" y1="125" x2="500" y2="125" stroke="black"/>
+  <text x="310" y="145" font-size="12">+ InitializeLevel()</text>
+  <text x="310" y="160" font-size="12">+ NextLevel()</text>
+  <text x="310" y="175" font-size="12">+ IsLevelComplete(): bool</text>
+  
+  <!-- BrickInitializer -->
+  <rect x="550" y="50" width="200" height="140" fill="#F0E68C" stroke="black"/>
+  <text x="650" y="70" text-anchor="middle" font-weight="bold">BrickInitializer</text>
+  <line x1="550" y1="80" x2="750" y2="80" stroke="black"/>
+  <text x="560" y="100" font-size="12">- brickFactory: BrickFactory</text>
+  <text x="560" y="115" font-size="12">- levelDesigns: List&lt;LevelDesign&gt;</text>
+  <line x1="550" y1="125" x2="750" y2="125" stroke="black"/>
+  <text x="560" y="145" font-size="12">+ InitializeLevel(int)</text>
+  <text x="560" y="160" font-size="12">+ GetRemainingBrickCount(): int</text>
+  <text x="560" y="175" font-size="12">+ OnBrickDestroyed()</text>
+  
+  <!-- BrickFactory -->
+  <rect x="800" y="50" width="200" height="140" fill="#FFB6C1" stroke="black"/>
+  <text x="900" y="70" text-anchor="middle" font-weight="bold">BrickFactory</text>
+  <line x1="800" y1="80" x2="1000" y2="80" stroke="black"/>
+  <text x="810" y="100" font-size="12">- brickTypes: List&lt;BrickType&gt;</text>
+  <line x1="800" y1="110" x2="1000" y2="110" stroke="black"/>
+  <text x="810" y="130" font-size="12">+ CreateBrick(string, Vector3, int)</text>
+  <text x="810" y="145" font-size="12">+ GetAvailableBrickTypes(): string[]</text>
+  
+  <!-- LevelDesign -->
+  <rect x="550" y="250" width="200" height="140" fill="#D3D3D3" stroke="black"/>
+  <text x="650" y="270" text-anchor="middle" font-weight="bold">LevelDesign</text>
+  <line x1="550" y1="280" x2="750" y2="280" stroke="black"/>
+  <text x="560" y="300" font-size="12">+ levelNumber: int</text>
+  <text x="560" y="315" font-size="12">+ gridSize: Vector2Int</text>
+  <text x="560" y="330" font-size="12">+ bricks: List&lt;BrickData&gt;</text>
+  <text x="560" y="345" font-size="12">+ useRandomPlacement: bool</text>
+  <text x="560" y="360" font-size="12">+ randomBrickDistribution: List&lt;...&gt;</text>
+  
+  <!-- Brick -->
+  <rect x="800" y="250" width="200" height="140" fill="#FFA07A" stroke="black"/>
+  <text x="900" y="270" text-anchor="middle" font-weight="bold">Brick</text>
+  <line x1="800" y1="280" x2="1000" y2="280" stroke="black"/>
+  <text x="810" y="300" font-size="12">+ PointValue: int</text>
+  <text x="810" y="315" font-size="12">+ BrickType: string</text>
+  <line x1="800" y1="325" x2="1000" y2="325" stroke="black"/>
+  <text x="810" y="345" font-size="12">+ Initialize(int, string, BrickInitializer)</text>
+  <text x="810" y="360" font-size="12">+ DestroyBrick()</text>
+  
+  <!-- LevelDesignEditor -->
+  <rect x="300" y="250" width="200" height="100" fill="#E6E6FA" stroke="black"/>
+  <text x="400" y="270" text-anchor="middle" font-weight="bold">LevelDesignEditor</text>
+  <line x1="300" y1="280" x2="500" y2="280" stroke="black"/>
+  <text x="310" y="300" font-size="12">- levelDesign: LevelDesign</text>
+  <line x1="300" y1="310" x2="500" y2="310" stroke="black"/>
+  <text x="310" y="330" font-size="12">+ OnInspectorGUI()</text>
+  
+  <!-- Relationships -->
+  <line x1="250" y1="120" x2="300" y2="120" stroke="black" marker-end="url(#arrow)"/>
+  <line x1="500" y1="120" x2="550" y2="120" stroke="black" marker-end="url(#arrow)"/>
+  <line x1="750" y1="120" x2="800" y2="120" stroke="black" marker-end="url(#arrow)"/>
+  <line x1="650" y1="190" x2="650" y2="250" stroke="black" marker-end="url(#arrow)"/>
+  <line x1="900" y1="190" x2="900" y2="250" stroke="black" marker-end="url(#arrow)"/>
+  <line x1="500" y1="300" x2="550" y2="300" stroke="black" marker-end="url(#arrow)"/>
+</svg>
