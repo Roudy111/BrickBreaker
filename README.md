@@ -14,7 +14,7 @@ You can play the complete game with my own SFXs & Background [here](https://play
 
 
 ### State Management
-- Robust game state system handling idle, gameplay, level transitions, and game over states
+- Game state system handling idle, gameplay, level transitions, and game over states
 - Event-driven state changes with observer subscription
 
 ### Audio System
