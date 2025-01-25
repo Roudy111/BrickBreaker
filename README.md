@@ -12,7 +12,7 @@ You can play the complete game with my own SFXs & Background [here](https://play
 - **Factory Pattern**: Brick creation and variations
 - **Observer Pattern**: Event-driven communication between components
 - **Strategy Pattern**: Different sound strategies for message types
-- **MVC Pattern**: UI data handling and display
+- **MVC Pattern**: UI data handling and display(native in Unity UI system)
 
 ### State Management
 - Robust game state system handling idle, gameplay, level transitions, and game over states
